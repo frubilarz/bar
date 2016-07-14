@@ -6,6 +6,7 @@
 
 package org.boaboa.servicio;
 
+import java.util.Date;
 import java.util.List;
 import org.boaboa.modelo.Mesa;
 import org.boaboa.modelo.Pedido;
@@ -57,6 +58,10 @@ public interface ServicioPedido {
     public List<PedidoProducto> consultarPedidoProductos(Pedido pedido);
     
     public List<PedidoProducto> consultarPedidoProductos(Producto producto);
+    
+    public List<PedidoProducto> consultarPedidoProductos(Pedido pedido, Date fecha);
+    
+    public List<PedidoProducto> consultarPedidoProductos(Date fecha);
     
     
 }

@@ -68,6 +68,7 @@ create table pedidos_productos(
     pedido_id int NOT NULL REFERENCES pedidos(id) ON UPDATE CASCADE ON DELETE CASCADE,
     producto_id int NOT NULL REFERENCES productos(id) ON UPDATE CASCADE ON DELETE CASCADE,
     monto int default 0 not null,
+    fecha timestamp NOT NULL DEFAULT NOW(),
     primary key(id)
 );
 

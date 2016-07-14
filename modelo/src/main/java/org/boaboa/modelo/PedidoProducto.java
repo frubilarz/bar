@@ -5,6 +5,7 @@
  */
 package org.boaboa.modelo;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -40,6 +43,10 @@ public class PedidoProducto extends BaseBean {
     @Column(name = "monto")
     private Integer monto = null;
 
+    @Column(name = "fecha", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecha = new Date();
+
     public PedidoProducto() {
     }
 
@@ -49,6 +56,14 @@ public class PedidoProducto extends BaseBean {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public Pedido getPedido() {

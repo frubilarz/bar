@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package org.boaboa.repository;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;
 import org.boaboa.modelo.Pedido;
@@ -19,11 +19,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author frubilar
  */
 @Resource(name = "pedidoProductoRepository")
-public interface PedidoProductoRepository extends JpaRepository<PedidoProducto, Integer>{
+public interface PedidoProductoRepository extends JpaRepository<PedidoProducto, Integer> {
 
     public List<PedidoProducto> findByPedido(Pedido pedido);
-    
+
     public List<PedidoProducto> findByProducto(Producto producto);
-    
-    
+
+    public List<PedidoProducto> findByPedidoAndFecha(Pedido pedido, Date fecha);
+
+    public List<PedidoProducto> findByFecha(Date fecha);
+
 }
