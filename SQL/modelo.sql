@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS usuarios CASCADE;
 CREATE TABLE usuarios(
     id serial not null,
     rut int not null,
+    nombre varchar(255) not null,
     password varchar(255) not null,
     rol_id int NOT NULL REFERENCES roles(id) ON UPDATE CASCADE ON DELETE CASCADE,
     primary key(id)
@@ -79,6 +80,16 @@ create table boletas(
     fecha timestamp NOT NULL DEFAULT NOW(),
     forma_pago_id int NOT NULL REFERENCES formas_pagos(id) ON UPDATE CASCADE ON DELETE CASCADE,
     pedido_producto_id int NOT NULL REFERENCES pedidos_productos(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    primary key(id)
+);
+
+DROP TABLE IF EXISTS turnos CASCADE;
+create table turnos(
+    id serial not null,
+    usuario_id int NOT NULL REFERENCES usuarios(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    ingreso timestamp NOT NULL DEFAULT NOW(),
+    salida timestamp NOT NULL DEFAULT NOW(),
+    fecha timestamp NOT NULL DEFAULT NOW(),
     primary key(id)
 );
 
