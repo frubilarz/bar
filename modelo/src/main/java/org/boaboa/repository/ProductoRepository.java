@@ -5,7 +5,6 @@
  */
 package org.boaboa.repository;
 
-import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Resource;
 import org.boaboa.modelo.Producto;
