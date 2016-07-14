@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author frubilar
  */
 @Entity
-@Table(name = "tipo_productos")
+@Table(name = "tipos_productos")
 public class TipoProducto extends BaseBean {
 
     @Id
