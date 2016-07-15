@@ -85,7 +85,8 @@
     </build>
     <modules>
         <module>modelo</module>
-    </modules>
+    <module>Rest</module>
+  </modules>
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
