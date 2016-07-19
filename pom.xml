@@ -5,6 +5,7 @@
     <artifactId>ProyectoBar</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
+    <name>Proyecto BAR</name>
     <properties>
         <jvm.version>1.6</jvm.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -82,7 +83,10 @@
             </plugin>
         </plugins>
     </build>
-
+    <modules>
+        <module>modelo</module>
+    <module>Rest</module>
+  </modules>
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
